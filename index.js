@@ -8,11 +8,7 @@ import {
     tfidf,
   } from "./src/wordvector.js";
 import { wordcloud } from "./src/wordcloud.js";
-import "./src/q1.js";
-import "./src/q2.js";
-import "./src/q3.js";
-import "./src/q4.js";
-
+import { renderClusterWordClouds } from "./src/q4.js";
 
 loadMoviesDataset().then((movies) => {
   d3.json('data/merge_tree.json').then(merge_tree => {
@@ -21,6 +17,7 @@ loadMoviesDataset().then((movies) => {
     console.log(movies);
     console.log(merge_tree);
 
-    // add your code here
+    // Render Q4 word clouds for the two main clusters
+    renderClusterWordClouds(merge_tree, movies);
   }); 
 });
