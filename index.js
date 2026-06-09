@@ -8,6 +8,10 @@ import {
     tfidf,
   } from "./src/wordvector.js";
 import { wordcloud } from "./src/wordcloud.js";
+import "./src/q1.js";
+import "./src/q2.js";
+import "./src/q3.js";
+import "./src/q4.js";
 
 
 loadMoviesDataset().then((movies) => {
