@@ -79,6 +79,30 @@
                 </div>
             </div>
 
+            <div class="dashboard-layout" style="display: flex; gap: 30px; margin-top: 30px; font-family: sans-serif;">
+    
+                <div class="panel-tree" style="flex: 1; min-width: 500px; background: #fafafa; padding: 15px; border-radius: 6px; border: 1px solid #e0e0e0;">
+                    <h3 style="margin-top: 0;">Cluster History Evolution</h3>
+                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
+                        Select any node checkpoint along the branches to inspect that specific clustered group of action movies.
+                    </p>
+                    <div id="tree-container"></div>
+                </div>
+                
+                <div class="panel-text" style="flex: 1.2; background: #fff; padding: 15px; border-radius: 6px; border: 1px solid #e0e0e0;">
+                    <h3 style="margin-top: 0;">Cluster Insights Panel</h3>
+                    <div id="cluster-placeholder-message" style="color: #999; padding: 40px 0; text-align: center; font-style: italic;">
+                        Click a cluster node on the left dendrogram map to analyze movie texts, genre spreads, and key word distributions.
+                    </div>
+                    
+                    <div id="active-cluster-details" style="display: none;">
+                        <div id="wordcloud-placeholder" style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;"></div>
+                        <div id="genre-chart-placeholder" style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;"></div>
+                        <div id="movie-list-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+
             <zero-md src=".\design_decisions.md">
                 <template>
                     <link rel="stylesheet" href="style.css"/>
