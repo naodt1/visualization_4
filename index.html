@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="index.js"></script>
+    <script src="./src/mds.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+    <title>Assignment 4</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Assignment 4</h1>
+
+        <section>
+            <h2>Text and Tree visualization and Colors</h2>
+            <div class="task">
+                <h3>Analyzing document clusters</h3>
+                <p>In this task you will create a system to analyze a clustering of short texts that describe action movies. It is your task to implement and coordinate
+                    both text and tree visualizations to find out about differences and similarities between these clusters. </p>
+
+                    <p>The data analyst used a hierarchical cluster algorithm to generate the clusters from the movies' overview texts embeddings. In this process, initially, all items are in separate clusters. In each iteration step, the two most similar clusters are merged. The variable
+                     <code>merge_tree</code> contains a tree representation of the last 20 steps of the process. Each node contains 5 attributes: (1) an id, (2) <i>children</i>: the two cluster that are merged in the step, (3) <i>distance</i>: the Euclidean distance between the two merged clusters, (4) <i>movie_ids</i>: the ids of the movies in the merged cluster, and (5) <i>full_clustering</i>: all clusters in the current cluster state.</p>
+                     
+                    <p> The variable <code>movies</code> contains a list of action films. The most relevant attributes for this task are (1) <i>imdbId</i>: the id of the film, (2) <i>title</i>, (3) <i>genres</i>, and (4) <i>overview</i>: a short description of the film. 
+                </p>
+                <p>
+                    Your system should be able to answer the following questions: 
+                    <ol>
+                        <li>How did the clustering evolve? In which region were the sequentially merged clusters close together, based on their Euclidean distance?</li>
+                        <li>Which action films have been clustered together in the different cluster steps? Does it make sense?</li>
+                        <li>What is the distribution of genres in each cluster?</li>
+                        <li>How do the clusters differ in wording?</li>
+                    </ol>
+                </p>
+                <p>The data has already been loaded for you in <code>index.js</code>. We are logging it into the console for you to analyze.</p>
+
+                <h4>Requirements</h4>
+                <ol>
+                    <li>Implement at least one text and one tree visualization (50%)</li>
+                    <li>Implement suitable interactions. (10%)</li>
+                    <li>Choose at least one categorical, one sequential and one diverging color scale to illustrate the data (15%)</li>
+                    <li>Answer the questions (10%)</li>
+                    <li>Describe and defend your design (15%)</li>
+                </ol>
+
+                <p>Once you are finished, replace the titleimage.png with a screenshot of your visualization, remove the node_modules folder, zip the assignment's folder <u>with all files you received from us</u> and upload to Moodle.</p>
+
+                <h4>Hints</h4>
+               <p>If you want, you can use the provided functionality for creating word clouds. The function is already loaded for you in the <code>document_embedding.js</code>.
+                The function <code>wordcloud(ssvg, word_counts)</code> expects a d3 selection as <i>svg</i> and an array of word counts in the format <i>[[word1, count], [word2, count]...]</i> as <i>word_counts</i>. 
+                For tokenization, feel free to use the function <code>documentToWords(text)</code> that receives the raw text as input and returns an array of single words. 
+                </p>
+                <p>If you want to use <i>tfidf</i>, you can use the <code>tfidf(word_array, idf)</code>. <i>word_array</i> is an array of word counts. <i>idf</i> is a map of 
+                inverse document frequencies that you can calculate using the function <code>inverseDocumentFrequency(grouped_words)</code>. The grouped words is an array of arrays of words [[word1, word2, ...], [word3, word 4...]] 
+            where each word array represents one group that will be contrasted with the tfidf measure.</p>
+
+                <p>A dendrogram is a useful visualization to view the process of hierarchical clustering. </p>
+            </div>
+        </section>
+
+            <!-- your svgs and other visualization containers go here -->
+            
+             
+
+            <zero-md src=".\design_decisions.md">
+                <template>
+                    <link rel="stylesheet" href="style.css"/>
+                </template>
+            </zero-md>
+
+             <zero-md src=".\answers.md">
+                <template>
+                    <link rel="stylesheet" href="style.css"/>
+                </template>
+            </zero-md>
+            
+
+
+
+    </main>
+</body>
+
+</html>
