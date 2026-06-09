@@ -79,26 +79,32 @@
                 </div>
             </div>
 
-            <div class="dashboard-layout" style="display: flex; gap: 30px; margin-top: 30px; font-family: sans-serif;">
-    
-                <div class="panel-tree" style="flex: 1; min-width: 500px; background: #fafafa; padding: 15px; border-radius: 6px; border: 1px solid #e0e0e0;">
-                    <h3 style="margin-top: 0;">Cluster History Evolution</h3>
-                    <p style="color: #666; font-size: 13px; margin-bottom: 15px;">
-                        Select any node checkpoint along the branches to inspect that specific clustered group of action movies.
+            <div class="viz-dashboard">
+                <div class="viz-cell viz-row-full">
+                    <h3 class="viz-title">Cluster History Evolution</h3>
+                    <p class="viz-desc">
+                        Select any node checkpoint along the branches to inspect that clustered group of action movies.
                     </p>
-                    <div id="tree-container"></div>
+                    <div id="tree-container" class="viz-svg-host"></div>
                 </div>
-                
-                <div class="panel-text" style="flex: 1.2; background: #fff; padding: 15px; border-radius: 6px; border: 1px solid #e0e0e0;">
-                    <h3 style="margin-top: 0;">Cluster Insights Panel</h3>
-                    <div id="cluster-placeholder-message" style="color: #999; padding: 40px 0; text-align: center; font-style: italic;">
-                        Click a cluster node on the left dendrogram map to analyze movie texts, genre spreads, and key word distributions.
+
+                <div class="viz-cell viz-row-full">
+                    <h3 class="viz-title">Distinctive Cluster Terminology</h3>
+                    <p class="viz-desc">TF-IDF word cloud for the selected cluster.</p>
+                    <div id="wordcloud-container" class="viz-svg-host"></div>
+                </div>
+
+                <div class="viz-row-split">
+                    <div class="viz-cell">
+                        <h3 class="viz-title">Cluster Genre Distribution</h3>
+                        <p class="viz-desc">Categorical breakdown of genres in the selected cluster.</p>
+                        <div id="genre-container" class="viz-svg-host"></div>
                     </div>
-                    
-                    <div id="active-cluster-details" style="display: none;">
-                        <div id="wordcloud-placeholder" style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;"></div>
-                        <div id="genre-chart-placeholder" style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;"></div>
-                        <div id="movie-list-placeholder"></div>
+
+                    <div class="viz-cell">
+                        <h3 class="viz-title">Clustered Titles</h3>
+                        <p class="viz-desc">Movies grouped at the selected merge step.</p>
+                        <div id="movie-list-container" class="viz-svg-host"></div>
                     </div>
                 </div>
             </div>
