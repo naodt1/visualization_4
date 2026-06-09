@@ -14,6 +14,7 @@ import { updateTextInsights } from "./src/textInsights.js";
 
 loadMoviesDataset().then((movies) => {
   d3.json('data/merge_tree.json').then(merge_tree => {
+
     // create a d3 hierarchy out of it
     merge_tree = d3.hierarchy(merge_tree);
     console.log(movies);
@@ -21,6 +22,9 @@ loadMoviesDataset().then((movies) => {
 
     // Render Q4 word clouds for the two main clusters
     renderClusterWordClouds(merge_tree, movies);
+
+    const globalGroupedWords = movies.map(movie => documentToWords(movie.overview || ""));
+    const globalIdf = inverseDocumentFrequency(globalGroupedWords);
     function handleClusterSelection(movieIds, rawNodeData) {
       console.log("Processing active cluster composition update targeting IDs:", movieIds);
 
