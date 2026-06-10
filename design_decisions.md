@@ -1,4 +1,7 @@
 ### Design
+<strong>Naod Tefera</strong> - 129265 &nbsp;|&nbsp; <strong>Saba Rehman</strong> - 128591
+
+
 We have visualized the cluster evolution using a **Dendrogram**. Each node represents a cluster. On hover, we can view the details about the cluster. The vertical axis encodes the merge distance. The horizontal axis does not encode any quantitative values. The numbers on the axis are just assigned to be able to easily name the leaf node. 
 
 The links between the nodes use a sequential color scale to encode the distance. Clusters that are closer to each other have a darker blue color. With larger distances, the blue color fades to a grey. We can also interact with the nodes. On selecting a node, the three charts below the dendrogram update to reflect details of the selected node.
