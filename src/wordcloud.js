@@ -44,6 +44,10 @@ export function wordcloud(svg, word_counts) {
     //adjust the domain of the word size scale
     size.domain(d3.extent(words, (d) => d[1]));
 
+    // Calculate the mean size to mathematically center the diverging color scale
+    const meanSize = d3.mean(words, d => size(d[1]));
+    color.domain([25, meanSize, 100]);
+
     // call the layout with the words -> layout.words(....)
     layout.words(words.map((d) => ({ text: d[0], size: size(d[1]) })));
     layout.start();

@@ -44,7 +44,7 @@ export function renderWordCloud(selectedMovies, globalIdf) {
             .style("font-size", "12px")
             .style("color", "#555");
             
-        legend.append("span").text("Lower Frequency");
+        legend.append("span").text("Below Avg. (Common)");
         
         // Gradient bar
         const gradientId = "wc-legend-gradient";
@@ -68,7 +68,7 @@ export function renderWordCloud(selectedMovies, globalIdf) {
             .attr("height", 12)
             .attr("fill", `url(#${gradientId})`);
             
-        legend.append("span").text("Higher Frequency");
+        legend.append("span").text("Above Avg. (Highly Unique)");
 
         svg = container.append("svg")
             .attr("width", 600)
