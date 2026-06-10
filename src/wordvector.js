@@ -6,7 +6,29 @@ const nlp = new winkNLP(model);
 
 export function documentToWords(text) {
   // tokenize  
-  const tokens = nlp.readDoc(text.replaceAll('.', '').replaceAll(",","").replaceAll("'s", "").replaceAll('-', '').replaceAll(':', '').replaceAll('/', '').replaceAll('–', '').replaceAll('—', '')).tokens();
+  const tokens = nlp.readDoc(text
+    .replaceAll("'s", "")
+    .replaceAll("\u2019s", "")
+    .replaceAll('.', '')
+    .replaceAll(',', '')
+    .replaceAll('?', '')
+    .replaceAll("'", '')
+    .replaceAll("\u2019", '')
+    .replaceAll('"', '')
+    .replaceAll('-', '')
+    .replaceAll(':', '')
+    .replaceAll(';', '')
+    .replaceAll('/', '')
+    .replaceAll('–', '')
+    .replaceAll('—', '')
+    .replaceAll('[', '')
+    .replaceAll(']', '')
+    .replaceAll('(', '')
+    .replaceAll(')', '')
+    .replaceAll('!', '')
+    .replaceAll('!!', '')
+    .replaceAll("\u2122", '')
+).tokens();
   // remove stop words
   const stopwords = tokens.out(nlp.its.stopWordFlag);
   // lemmatize (has the same use as stemming)
