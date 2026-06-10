@@ -83,7 +83,7 @@ export function renderGenreChart(selectedMovies) {
     const genreWidth = containerWidth(GENRE_CONTAINER);
     const margin = { top: 10, right: 20, bottom: 90, left: 70 };
     const width = genreWidth - margin.left - margin.right;
-    const height = VIZ_HEIGHT - margin.top - margin.bottom;
+    const height = (VIZ_HEIGHT + 80) - margin.top - margin.bottom;
 
     const genreSvg = container.append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -96,8 +96,9 @@ export function renderGenreChart(selectedMovies) {
         .range([0, width])
         .padding(0.2);
 
+    const maxPct = d3.max(genreData, d => d.percentage) ?? 100;
     const yScale = d3.scaleLinear()
-        .domain([0, 100])
+        .domain([0, maxPct * 1.1])
         .range([height, 0]);
 
     const tooltip = container.append("div")
@@ -158,7 +159,7 @@ export function renderGenreChart(selectedMovies) {
         .attr("x", -height / 2)
         .attr("text-anchor", "middle")
         .style("font-family", "sans-serif")
-        .style("font-size", "11px")
+        .style("font-size", "13px")
         .style("fill", "#555")
         .text("Percentage of movies in cluster");
 
@@ -167,7 +168,7 @@ export function renderGenreChart(selectedMovies) {
         .attr("y", height + 62)
         .attr("text-anchor", "middle")
         .style("font-family", "sans-serif")
-        .style("font-size", "11px")
+        .style("font-size", "13px")
         .style("fill", "#555")
         .text("Genre");
 }
