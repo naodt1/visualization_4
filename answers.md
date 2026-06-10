@@ -1,2 +1,4 @@
 ### Answers
-write the answers here
+1. The initial merging steps (0-2) merge clusters of 1 or 2 movies, characterized by very low distances (< 0.5). These represent the most obvious, tightly-knit pairings in the dataset. This suggests the algorithm is effectively grouping films with highly similar core concepts or character types early on. The distances then increase as larger and more dissimilar groups are combined, indicating the major thematic branches of the clustering. 
+
+3. The divergent color scale is used to visualize the TF-IDF scores of the words. The distribution of TF-IDF scores for the words is skewed towards the lower end, indicating that most words are common among the movies. The color scale is used to highlight the words that are most unique to each cluster. The color scale is centered around the mean TF-IDF score, with lower values shown in teal (common words) and higher values shown in terracotta (unique words). The cream color in the middle represents words that are neither particularly common nor unique. This allows to to quickly identify words that are distinctive to each cluster.
