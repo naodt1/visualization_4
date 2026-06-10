@@ -8,7 +8,7 @@ import {
     tfidf,
   } from "./src/wordvector.js";
 import { wordcloud } from "./src/wordcloud.js";
-import { renderClusterWordClouds } from "./src/q4.js";
+
 import { createDendrogram } from "./src/dendrogram.js";
 import { updateTextInsights } from "./src/textInsights.js";
 
@@ -20,8 +20,7 @@ loadMoviesDataset().then((movies) => {
     console.log(movies);
     console.log(merge_tree);
 
-    // Render Q4 word clouds for the two main clusters
-    renderClusterWordClouds(merge_tree, movies);
+
 
     const globalGroupedWords = movies.map(movie => documentToWords(movie.overview || ""));
     const globalIdf = inverseDocumentFrequency(globalGroupedWords);

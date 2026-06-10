@@ -6,10 +6,12 @@ import {
 import { renderWordCloud, showWordCloudPlaceholder } from './wordcloudViz.js';
 import { renderMovieList, showMovieListPlaceholder } from './movieList.js';
 
+
 export function initTextInsights() {
     showWordCloudPlaceholder();
     showGenrePlaceholder();
     showMovieListPlaceholder();
+
 }
 
 export function updateTextInsights(movieIds, allMovies, globalIdf) {
@@ -25,4 +27,5 @@ export function updateTextInsights(movieIds, allMovies, globalIdf) {
     renderWordCloud(selectedMovies, globalIdf);
     renderGenreChart(selectedMovies);
     renderMovieList(selectedMovies);
+
 }
